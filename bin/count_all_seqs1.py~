@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+
+import os
+import seq_utils
+import sys
+
+def count_seqs1(filenames):
+    filenames = sorted (os.listdir('/home/user/Documents/python/data/'))
+    os.chdir('/home/user/Documents/python/data/')
+
+    for filex in filenames:
+        input_file = open(filex)
+        seq_count = seq_utils.count_seqs(input_file)
+        print seq_count,"in",filex
+
+
+if len(sys.argv) != 2:
+        sys.exit("Usage: count_all_seqs1.py <filenames>")
+
+print count_seqs1(filenames)
+
+
